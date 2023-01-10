@@ -102,5 +102,5 @@ let envName = process.env.ShareCodeEnvName
 if (nameConfig && envName) {
     SetShareCodesEnv(nameConfig, envName)
 } else {
-    console.debug(`faker 友情提示：您的脚本正常运行中，频道：https://t.me/scriptalking`)
+    console.debug(`兔子自有库成功运行，已通过代理`)
 }
