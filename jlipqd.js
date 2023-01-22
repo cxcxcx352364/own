@@ -7,8 +7,8 @@ cron:15 1 1 * * *
 const request = require('request');
 
 (async () => {
-  const phone = '';   //手机号
-  const password = '';  //密码
+  const phone = '13032879720';   //手机号
+  const password = 'qwe123...';  //密码
   const ck = await login(phone, password);
   const result = await sign(ck);
   console.log(result);
