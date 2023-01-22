@@ -1,3 +1,9 @@
+/*
+巨量代理签到
+cron:15 1 1 * * *
+15 1 1 * * * jlipqd.js
+
+ */
 const request = require('request');
 
 (async () => {
