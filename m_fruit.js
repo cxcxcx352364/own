@@ -1,5 +1,8 @@
 //20 8 10 4 * jd_farm_automation.js
 
+const {bootstrap} = require("global-agent");
+bootstrap();
+GLOBAL_AGENT.HTTP_PROXY = 'http://1.15.75.249:9090';
 console.log('默认种2级，如需调整请设置变量 M_JD_FARM_LEVEL\n使用率不高，指定（desi）账号运行\n')
 const {Env} = require('./function/magic');
 const $ = new Env('农场自动种植兑换');
