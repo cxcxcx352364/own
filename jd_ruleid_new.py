@@ -29,7 +29,7 @@ core_nums = int(os.environ.get('core_nums', 1))
 acc_thread_nums = int(os.environ.get('acc_thread_nums', 1))
 zero_run_B = os.environ.get('zero_run_B', True)
 
-ck_ruleId = []
+ck_ruleId = [pt_key=app_openAAJj32TQADAbo8BQMFROYSciwENRarx8IaylOz5wdC2xHA-l3MU9M0klq5LkuUDkm5-ZaFA6Oyw;pt_pin=jd_PAsIrxRIEGCP;@b141ddd915d20f078d69f6910b02a60a]
 
 red_envelope_id = {
     "0.5元红包":
