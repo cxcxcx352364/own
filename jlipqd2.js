@@ -1,7 +1,7 @@
 /*
 巨量代理签到
 cron:15 1 1 * * *
-15 1 1 * * * jlipqd.js
+15 1 1 * * * 代理签到2
 
  */
 const request = require('request');
