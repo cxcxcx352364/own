@@ -2,6 +2,7 @@ var __PROXY__ = 'PROXY star.chentuzi.icu:6890;';
 var __USERRULES__ = [];
 var __RULES__ = [
   "/.*/",
+  "@@||chentuzi.icu",
   "@@||local",
   "@@||localhost",
   "@@||localhost.sec.qq.com",
