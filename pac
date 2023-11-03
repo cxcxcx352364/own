@@ -1,4 +1,4 @@
-var __PROXY__ = 'PROXY star.chentuzi.icu:6890;';
+var __PROXY__ = 'PROXY www.starhuan.com:6890;';
 var __USERRULES__ = [];
 var __RULES__ = [
   "/.*/",
