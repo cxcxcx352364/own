@@ -14,7 +14,7 @@ const {bootstrap} = require("global-agent");
 
 bootstrap();
 
-GLOBAL_AGENT.HTTP_PROXY = 'http://1.15.75.249:9090';
+GLOBAL_AGENT.HTTP_PROXY = 'http://172.28.210.101:9099';
 //此处填写京东账号cookie。
 let CookieJDs = [
 ]
