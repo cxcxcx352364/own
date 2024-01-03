@@ -69,12 +69,7 @@ rule-providers:
     url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/tld-not-cn.txt"
     path: ./ruleset/tld-not-cn.yaml
     interval: 86400
-  telegramcidr:
-    type: http
-    behavior: ipcidr
-    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/telegramcidr.txt"
-    path: ./ruleset/telegramcidr.yaml
-    interval: 86400
+
   cncidr:
     type: http
     behavior: ipcidr
@@ -92,6 +87,78 @@ rule-providers:
     behavior: classical
     url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/applications.txt"
     path: ./ruleset/applications.yaml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml"
+    path: ./ruleset/Google.yaml
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
+    path: ./ruleset/GoogleCN.yaml
+    interval: 86400
+  GoogleCNProxyIP:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml"
+    path: ./ruleset/GoogleCNProxyIP.yaml
+    interval: 86400
+  GoogleEarth:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleEarth.yaml"
+    path: ./ruleset/GoogleEarth.yaml
+    interval: 86400
+  GoogleFCM:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+    path: ./ruleset/GoogleFCM.yaml
+    interval: 86400
+  OpenAi:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml"
+    path: ./ruleset/OpenAi.yaml
+    interval: 86400     
+  Microsoft:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+    path: ./ruleset/Microsoft.yaml
+    interval: 86400       
+  Bing:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bing.yaml"
+    path: ./ruleset/Bing.yaml
+    interval: 86400   
+  YouTube:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400   
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
+  cloudflare:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/master/cloudflare.txt"
+    path: ./ruleset/cloudflare.yaml
+    interval: 86400
+  emby:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/master/emby.txt"
+    path: ./ruleset/emby.yaml
     interval: 86400
 proxies:
     - { name: 香港01, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10801, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
@@ -162,6 +229,20 @@ proxy-groups:
     - { name: Select-新加坡, type: select, proxies: [新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08]}
     - { name: Select-EDGE, type: select, proxies: [台湾01, 韩国01, 英国01, 法国01, 德国01, 印度01, 迪拜01, 俄罗斯01, 乌克兰01, 土耳其01, 阿根廷01, 奥地利01, 意大利01, 爱尔兰01] }
 rules:
+  - RULE-SET,Telegram,电报  
+  - RULE-SET,OpenAi,AI
+  - RULE-SET,Microsoft,微软
+  - RULE-SET,Bing,微软
+  - RULE-SET,YouTube,油管  
+  - RULE-SET,google,谷歌  
+  - RULE-SET,Google,谷歌
+  - RULE-SET,GoogleCN,谷歌
+  - RULE-SET,GoogleCNProxyIP,谷歌
+  - RULE-SET,GoogleEarth,谷歌
+  - RULE-SET,GoogleFCM,谷歌
+  - RULE-SET,emby,EMBY 
+  - RULE-SET,cloudflare,Cloudflare
+  - RULE-SET,proxy,全局手动
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
@@ -169,12 +250,9 @@ rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
-  - RULE-SET,google,DIRECT
-  - RULE-SET,proxy,PROXY
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
-  - RULE-SET,telegramcidr,PROXY
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,PROXY
+  - MATCH,全局手动
