@@ -171,6 +171,7 @@ proxies:
     - { name: 香港08, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10808, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
     - { name: 香港09家宽, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10809, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
     - { name: 香港10家宽, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10810, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: '单独', type: ss, server: 120.232.177.252, port: 45611, cipher: aes-256-gcm, password: exam, udp: true }
     - { name: 日本01, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10811, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
     - { name: 日本02, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10812, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
     - { name: 日本03, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10813, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
@@ -223,7 +224,7 @@ proxy-groups:
     - { name: Auto-日本, type: url-test, proxies: [日本01, 日本02, 日本03, 日本04, 日本05, 日本06, 日本07, 日本08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: Auto-美国, type: url-test, proxies: [美国01, 美国02, 美国03, 美国04, 美国05, 美国06, 美国07, 美国08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: Auto-新加坡, type: url-test, proxies: [新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: Select-香港, type: select, proxies: [香港01, 香港02, 香港03, 香港04, 香港05, 香港06, 香港07, 香港08, 香港09家宽, 香港10家宽] }
+    - { name: Select-香港, type: select, proxies: [香港01, 香港02, 香港03, 香港04, 香港05, 香港06, 香港07, 香港08, 香港09家宽, 香港10家宽, 单独] }
     - { name: Select-日本, type: select, proxies: [日本01, 日本02, 日本03, 日本04, 日本05, 日本06, 日本07, 日本08] }
     - { name: Select-美国, type: select, proxies: [美国01, 美国02, 美国03, 美国04, 美国05, 美国06, 美国07, 美国08] }
     - { name: Select-新加坡, type: select, proxies: [新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08]}
