@@ -1,0 +1,315 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  google:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml"
+    path: ./ruleset/Google.yaml
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml"
+    path: ./ruleset/GoogleCN.yaml
+    interval: 86400
+  GoogleCNProxyIP:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml"
+    path: ./ruleset/GoogleCNProxyIP.yaml
+    interval: 86400
+  GoogleEarth:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleEarth.yaml"
+    path: ./ruleset/GoogleEarth.yaml
+    interval: 86400
+  GoogleFCM:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml"
+    path: ./ruleset/GoogleFCM.yaml
+    interval: 86400
+  OpenAi:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml"
+    path: ./ruleset/OpenAi.yaml
+    interval: 86400     
+  Microsoft:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml"
+    path: ./ruleset/Microsoft.yaml
+    interval: 86400       
+  Bing:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bing.yaml"
+    path: ./ruleset/Bing.yaml
+    interval: 86400   
+  YouTube:
+    type: http
+    behavior: classical 
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400   
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
+  cloudflare:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/master/cloudflare.txt"
+    path: ./ruleset/cloudflare.yaml
+    interval: 86400
+  emby:
+    type: http
+    behavior: classical
+    url: "https://gitproxy.starhuan.com/https://raw.githubusercontent.com/cxcxcx352364/clash-rules/master/emby.txt"
+    path: ./ruleset/emby.yaml
+    interval: 86400
+proxies:
+    - { name: PPD香港01, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10801, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港02, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10802, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港03, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10803, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港04, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10804, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港05, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10805, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港06, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10806, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港07, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10807, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港08, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10808, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港09家宽, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10809, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD香港10家宽, type: trojan, server: ppg-hk.05xuzdqs5j.com, port: 10810, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本01, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10811, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本02, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10812, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本03, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10813, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPDPPD日本04, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10814, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本05, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10815, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本06, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10816, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本07, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10817, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD日本08, type: trojan, server: ppg-jp.05xuzdqs5j.com, port: 10818, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国01, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10819, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国02, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10820, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国03, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10821, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国04, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10822, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国05, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10823, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国06, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10824, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国07, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10825, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD美国08, type: trojan, server: ppg-us.05xuzdqs5j.com, port: 10826, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡01, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10827, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡02, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10828, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡03, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10829, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡04, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10830, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡05, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10831, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡06, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10832, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡07, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10833, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD新加坡08, type: trojan, server: ppg-sg.05xuzdqs5j.com, port: 10834, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD台湾, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10835, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD韩国, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10836, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD英国, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10837, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD法国, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10838, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD德国, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10839, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD印度, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10840, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD迪拜, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10841, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD俄罗斯, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10844, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD乌克兰, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10845, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD土耳其, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10846, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD阿根廷, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10847, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD奥地利, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10848, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD意大利, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10849, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: PPD爱尔兰, type: trojan, server: ppg-other.05xuzdqs5j.com, port: 10850, password: 11223344-5566-7788-9911-112233445566, udp: true, sni: cloudflare.node-ssl.cdn-alibaba.com, skip-cert-verify: true }
+    - { name: ACA香港01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 45611, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港02, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 14149, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港03, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10000, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港04, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10001, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港05, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10015, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港06, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10016, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港07, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10017, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港08, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10018, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港[IEPL], type: ss, server: 120.232.177.252, port: 45611, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本01, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 19563, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本02, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 43641, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本03, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 28436, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本04, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 12994, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本05, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10019, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本06, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10020, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本07, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10021, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本08, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10022, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本[Lite], type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10036, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 14337, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡02, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 43934, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡03, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10002, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡04, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10003, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡05, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10032, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡06, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10033, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡07, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10034, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡08, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10035, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡[Lite], type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10010, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA台湾01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 50937, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国01, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 25818, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国02, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 28287, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国03, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10038, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国04, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10039, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国05, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10040, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国06, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10041, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国07, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10042, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA美国08, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10043, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA英国01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10013, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA英国02, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10014, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA土耳其, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10005, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA阿根廷, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10006, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA印度, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10023, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA韩国, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10026, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA波兰, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10027, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA以色列, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10028, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA朝鲜, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10029, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA南极洲, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10030, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA冰岛, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10031, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA尼日利亚, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10037, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACAEMBY, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 39808, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+proxy-groups:
+    - { name: 全局手动, type: select, proxies: [自动选择, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡,Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: 自动选择, type: url-test, proxies: [Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, ], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 电报, type: select, proxies: [ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: AI, type: select, proxies: [ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: EMBY, type: select, proxies:[ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: 微软, type: select, proxies:[ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: 谷歌, type: select, proxies:[ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: Cloudflare, type: select, proxies:[ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: 油管, type: select, proxies:[ Auto-PPD香港, Auto-PPD日本, Auto-PPD美国, Auto-PPD新加坡, Select-PPD香港, Select-PPD日本, Select-PPD美国, Select-PPD新加坡, Auto-ACA香港, Auto-ACA日本, Auto-ACA美国, Auto-ACA新加坡, Select-ACA香港, Select-ACA日本, Select-ACA美国, Select-ACA新加坡, Select-EDGE] }
+    - { name: Auto-PPD香港, type: url-test, proxies: [PPD香港01, PPD香港02, PPD香港03, PPD香港04, PPD香港05, PPD香港06, PPD香港07, PPD香港08, PPD香港09家宽, PPD香港10家宽], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-PPD日本, type: url-test, proxies: [PPD日本01, PPD日本02, PPD日本03, PPD日本04, PPD日本05, PPD日本06, PPD日本07, PPD日本08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-PPD美国, type: url-test, proxies: [PPD美国01, PPD美国02, PPD美国03, PPD美国04, PPD美国05, PPD美国06, PPD美国07, PPD美国08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-PPD新加坡, type: url-test, proxies: [PPD新加坡01, PPD新加坡02, PPD新加坡03, PPD新加坡04, PPD新加坡05, PPD新加坡06, PPD新加坡07, PPD新加坡08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Select-PPD香港, type: select, proxies: [PPD香港01, PPD香港02, PPD香港03, PPD香港04, PPD香港05, PPD香港06, PPD香港07, PPD香港08, PPD香港09家宽, PPD香港10家宽] }
+    - { name: Select-PPD日本, type: select, proxies: [PPD日本01, PPD日本02, PPD日本03, PPD日本04, PPD日本05, PPD日本06, PPD日本07, PPD日本08] }
+    - { name: Select-PPD美国, type: select, proxies: [PPD美国01, PPD美国02, PPD美国03, PPD美国04, PPD美国05, PPD美国06, PPD美国07, PPD美国08] }
+    - { name: Select-PPD新加坡, type: select, proxies: [PPD新加坡01, PPD新加坡02, PPD新加坡03, PPD新加坡04, PPD新加坡05, PPD新加坡06, PPD新加坡07, PPD新加坡08]}
+    - { name: Auto-ACA香港, type: url-test, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08, ACA香港[IEPL]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-ACA日本, type: url-test, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本[Lite]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-ACA美国, type: url-test, proxies: [ACA美国01, ACA美国02, ACA美国03, ACA美国04, ACA美国05, ACA美国06, ACA美国07, ACA美国08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-ACA新加坡, type: url-test, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡[Lite]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Select-ACA香港, type: select, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08,ACA香港[IEPL]] }
+    - { name: Select-ACA日本, type: select, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本[Lite]] }
+    - { name: Select-ACA美国, type: select, proxies: [ACA美国01, ACA美国02, ACA美国03, ACA美国04, ACA美国05, ACA美国06, ACA美国07, ACA美国08] }
+    - { name: Select-ACA新加坡, type: select, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡[Lite]]}
+    - { name: Select-EDGE, type: select, proxies: [ACAEMBY, ACA尼日利亚, ACA冰岛, ACA南极洲, ACA朝鲜, ACA以色列, ACA波兰, ACA韩国, ACA印度, ACA阿根廷, ACA土耳其, ACA英国01, ACA英国02, PPD台湾, PPD韩国, PPD英国, PPD法国, PPD德国, PPD印度, PPD韩国, PPD迪拜, PPD俄罗斯, PPD乌克兰, PPD土耳其, PPD阿根廷, PPD奥地利, PPD意大利, PPD爱尔兰] }
+rules:
+  - RULE-SET,Telegram,电报  
+  - RULE-SET,OpenAi,AI
+  - RULE-SET,Microsoft,微软
+  - RULE-SET,Bing,微软
+  - RULE-SET,YouTube,油管  
+  - RULE-SET,google,谷歌  
+  - RULE-SET,Google,谷歌
+  - RULE-SET,GoogleCN,谷歌
+  - RULE-SET,GoogleCNProxyIP,谷歌
+  - RULE-SET,GoogleEarth,谷歌
+  - RULE-SET,GoogleFCM,谷歌
+  - RULE-SET,emby,EMBY 
+  - RULE-SET,cloudflare,Cloudflare
+  - RULE-SET,proxy,全局手动
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,全局手动
