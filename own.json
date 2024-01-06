@@ -217,7 +217,7 @@ proxies:
     - { name: ACA香港06, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10016, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA香港07, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10017, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA香港08, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10018, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
-    - { name: ACA香港[IEPL], type: ss, server: 120.232.177.252, port: 45611, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA香港IEPL, type: ss, server: 120.232.177.252, port: 45611, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA日本01, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 19563, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA日本02, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 43641, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA日本03, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 28436, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
@@ -226,7 +226,7 @@ proxies:
     - { name: ACA日本06, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10020, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA日本07, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10021, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA日本08, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10022, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
-    - { name: ACA日本[Lite], type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10036, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA日本Lite, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 10036, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA新加坡01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 14337, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA新加坡02, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 43934, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA新加坡03, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10002, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
@@ -235,7 +235,7 @@ proxies:
     - { name: ACA新加坡06, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10033, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA新加坡07, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10034, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA新加坡08, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10035, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
-    - { name: ACA新加坡[Lite], type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10010, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
+    - { name: ACA新加坡Lite, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 10010, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA台湾01, type: ss, server: aca.xn--fiqr9egvchy8d.com, port: 50937, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA美国01, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 25818, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
     - { name: ACA美国02, type: ss, server: aca-cm-js-4g.cfprefer1.xyz, port: 28287, cipher: aes-256-gcm, password: a71ec159-12a4-4550-9b64-f53d10841175, udp: true }
@@ -276,14 +276,14 @@ proxy-groups:
     - { name: Select-PPD日本, type: select, proxies: [PPD日本01, PPD日本02, PPD日本03, PPD日本04, PPD日本05, PPD日本06, PPD日本07, PPD日本08] }
     - { name: Select-PPD美国, type: select, proxies: [PPD美国01, PPD美国02, PPD美国03, PPD美国04, PPD美国05, PPD美国06, PPD美国07, PPD美国08] }
     - { name: Select-PPD新加坡, type: select, proxies: [PPD新加坡01, PPD新加坡02, PPD新加坡03, PPD新加坡04, PPD新加坡05, PPD新加坡06, PPD新加坡07, PPD新加坡08]}
-    - { name: Auto-ACA香港, type: url-test, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08, ACA香港[IEPL]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: Auto-ACA日本, type: url-test, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本[Lite]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-ACA香港, type: url-test, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08, ACA香港IEPL], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Auto-ACA日本, type: url-test, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本Lite], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: Auto-ACA美国, type: url-test, proxies: [ACA美国01, ACA美国02, ACA美国03, ACA美国04, ACA美国05, ACA美国06, ACA美国07, ACA美国08], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: Auto-ACA新加坡, type: url-test, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡[Lite]], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: Select-ACA香港, type: select, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08,ACA香港[IEPL]] }
-    - { name: Select-ACA日本, type: select, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本[Lite]] }
+    - { name: Auto-ACA新加坡, type: url-test, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡Lite], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: Select-ACA香港, type: select, proxies: [ACA香港01, ACA香港02, ACA香港03, ACA香港04, ACA香港05, ACA香港06, ACA香港07, ACA香港08,ACA香港IEPL] }
+    - { name: Select-ACA日本, type: select, proxies: [ACA日本01, ACA日本02, ACA日本03, ACA日本04, ACA日本05, ACA日本06, ACA日本07, ACA日本08, ACA日本Lite] }
     - { name: Select-ACA美国, type: select, proxies: [ACA美国01, ACA美国02, ACA美国03, ACA美国04, ACA美国05, ACA美国06, ACA美国07, ACA美国08] }
-    - { name: Select-ACA新加坡, type: select, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡[Lite]]}
+    - { name: Select-ACA新加坡, type: select, proxies: [ACA新加坡01, ACA新加坡02, ACA新加坡03, ACA新加坡04, ACA新加坡05, ACA新加坡06, ACA新加坡07, ACA新加坡08, ACA新加坡Lite]}
     - { name: Select-EDGE, type: select, proxies: [ACAEMBY, ACA尼日利亚, ACA冰岛, ACA南极洲, ACA朝鲜, ACA以色列, ACA波兰, ACA韩国, ACA印度, ACA阿根廷, ACA土耳其, ACA英国01, ACA英国02, PPD台湾, PPD韩国, PPD英国, PPD法国, PPD德国, PPD印度, PPD韩国, PPD迪拜, PPD俄罗斯, PPD乌克兰, PPD土耳其, PPD阿根廷, PPD奥地利, PPD意大利, PPD爱尔兰] }
 rules:
   - RULE-SET,Telegram,电报  
